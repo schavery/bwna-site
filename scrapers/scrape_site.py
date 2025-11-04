@@ -76,7 +76,7 @@ class WixScraper:
                 'content': self._extract_content(soup),
                 'images': self._extract_images(soup, url),
                 'forms': await self._extract_forms(page),
-                'links': self._extract_links(soup, url),
+                'links': await self._extract_links(page, url),
             }
 
             # Take screenshots
@@ -271,20 +271,42 @@ class WixScraper:
             print(f"Warning: Could not extract forms: {e}")
             return []
 
-    def _extract_links(self, soup, base_url):
-        """Extract all internal links"""
-        links = []
-        for a in soup.find_all('a', href=True):
-            href = a['href']
-            full_url = urljoin(base_url, href)
+    async def _extract_links(self, page, base_url):
+        """Extract all internal links from rendered page"""
+        try:
+            site_hostname = urlparse(self.site_url).netloc
 
-            # Check if internal link
-            if urlparse(full_url).netloc == urlparse(self.site_url).netloc:
-                links.append({
-                    'text': a.get_text(strip=True),
-                    'href': full_url,
-                })
-        return links
+            links_data = await page.evaluate('''(siteHostname) => {
+                const links = [];
+                const seenUrls = new Set();
+
+                document.querySelectorAll('a[href]').forEach(link => {
+                    try {
+                        const url = new URL(link.href);
+                        // Only include links from the same domain
+                        if (url.hostname === siteHostname) {
+                            // Remove fragments and create clean URL
+                            const cleanUrl = url.origin + url.pathname + url.search;
+                            if (!seenUrls.has(cleanUrl)) {
+                                seenUrls.add(cleanUrl);
+                                links.push({
+                                    text: link.textContent.trim(),
+                                    href: cleanUrl
+                                });
+                            }
+                        }
+                    } catch (e) {
+                        // Skip invalid URLs
+                    }
+                });
+
+                return links;
+            }''', site_hostname)
+
+            return links_data
+        except Exception as e:
+            print(f"Warning: Could not extract links: {e}")
+            return []
 
     def _clean_filename(self, text):
         """Clean text to create valid filename"""
@@ -310,22 +332,35 @@ class WixScraper:
         to_visit = set()
         for link in homepage_data.get('links', []):
             url = link['href']
-            if url not in self.visited_urls and urlparse(url).netloc == urlparse(self.site_url).netloc:
-                to_visit.add(url)
+            # Remove fragments and query strings to avoid duplicates
+            clean_url = url.split('#')[0].split('?')[0]
+            if clean_url and clean_url not in self.visited_urls and urlparse(clean_url).netloc == urlparse(self.site_url).netloc:
+                to_visit.add(clean_url)
 
-        # Visit discovered pages
+        # Visit discovered pages - use while loop to process newly discovered URLs
         print(f"\n📄 Found {len(to_visit)} pages to scrape")
-        for url in tqdm(list(to_visit), desc="Scraping pages"):
-            if url not in self.visited_urls:
+
+        with tqdm(desc="Scraping pages", unit="page") as pbar:
+            while to_visit:
+                url = to_visit.pop()
+
+                if url in self.visited_urls:
+                    continue
+
                 self.visited_urls.add(url)
                 page_data = await self.scrape_page(browser, url)
+                pbar.update(1)
 
                 # Discover more links from this page
                 if page_data:
                     for link in page_data.get('links', []):
                         new_url = link['href']
-                        if new_url not in self.visited_urls and urlparse(new_url).netloc == urlparse(self.site_url).netloc:
-                            to_visit.add(new_url)
+                        # Remove fragments and query strings
+                        clean_url = new_url.split('#')[0].split('?')[0]
+                        if clean_url and clean_url not in self.visited_urls and urlparse(clean_url).netloc == urlparse(self.site_url).netloc:
+                            to_visit.add(clean_url)
+                            pbar.total = len(self.visited_urls) + len(to_visit)
+                            pbar.refresh()
 
                 await asyncio.sleep(1)  # Be polite
 
