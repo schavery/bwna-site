@@ -1,0 +1,18 @@
+{
+  "site_url": "https://www.bwnapdx.org",
+  "output_dir": "../scraped-content",
+  "screenshots_dir": "../scraped-content/screenshots",
+  "media_dir": "../scraped-content/media",
+  "pages_dir": "../scraped-content/pages",
+  "wait_time": 3000,
+  "headless": true,
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "mobile_viewport": {
+    "width": 375,
+    "height": 812
+  },
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+}
