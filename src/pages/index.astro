@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// In a full implementation, these would come from content collections
+const upcomingEvents = [
+  {
+    title: "BWNA General Meeting",
+    date: new Date("2026-02-09"),
+    time: "7:00 PM",
+    location: "Sylvan Learning Center",
+    description: "Bimonthly general meeting open to all neighbors. All are welcome!"
+  },
+  {
+    title: "Neighborhood Styrofoam & Electronics Recycling",
+    date: new Date("2026-02-21"),
+    time: "9:00 AM - 1:00 PM",
+    location: "Great Spirit Methodist Church",
+    description: "Drop off your styrofoam and electronics for responsible recycling."
+  }
+];
+
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Beaumont-Wilshire Neighborhood Association</h1>
+      <p>
+        Nestled among the luscious trees of Northeast Portland, our community is known 
+        for its mix of urban and serene lifestyles. We're a group of proud residents 
+        who strive to maintain a high standard of living through events and local services.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="/about" class="btn btn-primary">Learn About Us</a>
+        <a href="/get-involved" class="btn" style="background: transparent; border: 2px solid white; color: white;">Get Involved</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Upcoming Events</h2>
+        <p>Join us at our next community gathering</p>
+      </div>
+      
+      <div class="content-width" style="margin: 0 auto;">
+        {upcomingEvents.map((event) => (
+          <div class="event-item">
+            <div class="event-date">
+              <div class="month">{months[event.date.getMonth()]}</div>
+              <div class="day">{event.date.getDate()}</div>
+            </div>
+            <div class="event-details">
+              <h3>{event.title}</h3>
+              <div class="event-meta">
+                {event.time} • {event.location}
+              </div>
+              <p>{event.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <a href="/events" class="btn btn-secondary">View All Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links Section -->
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>How Can We Help?</h2>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>📰 Latest Newsletter</h3>
+          <p>Read the Jan-Feb 2026 issue for the latest neighborhood news, events, and community updates.</p>
+          <a href="/newsletters">Read Newsletter →</a>
+        </div>
+        
+        <div class="card">
+          <h3>🙋 Volunteer With Us</h3>
+          <p>From event planning to newsletter delivery, there are many ways to contribute to our community.</p>
+          <a href="/get-involved">Find Opportunities →</a>
+        </div>
+        
+        <div class="card">
+          <h3>📞 Community Resources</h3>
+          <p>Emergency contacts, city services, and helpful links for Beaumont-Wilshire residents.</p>
+          <a href="/resources">View Resources →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="page-section">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center;">
+        <div>
+          <h2>About Our Neighborhood</h2>
+          <p>
+            The Beaumont-Wilshire Neighborhood Association (BWNA) is one of 95 officially 
+            recognized neighborhood associations in Portland's historic tradition of local 
+            volunteer activism and involvement.
+          </p>
+          <p>
+            Our boundary includes much of the Fremont and NE 42nd Avenue business districts, 
+            Beaumont Middle School, and beautiful Wilshire Park.
+          </p>
+          <p>
+            <strong>Membership is free</strong> and open to all residents, property owners, 
+            businesses, and nonprofits in the neighborhood.
+          </p>
+          <a href="/about" class="btn btn-secondary">Meet Our Board</a>
+        </div>
+        <div style="background: var(--color-primary-light); border-radius: 8px; padding: 2rem; text-align: center;">
+          <!-- Placeholder for neighborhood map -->
+          <p style="color: var(--color-primary); font-style: italic;">
+            [Neighborhood Map]<br>
+            Beaumont-Wilshire boundaries
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="page-section" style="background: var(--color-primary); color: white; text-align: center;">
+    <div class="container">
+      <h2 style="color: white;">Stay in the Know!</h2>
+      <p style="max-width: 500px; margin: 0 auto 1.5rem; opacity: 0.95;">
+        Subscribe to receive monthly email updates about BWNA meetings, activities, 
+        and neighborhood announcements.
+      </p>
+      <a href="/subscribe" class="btn btn-primary">Subscribe to Updates</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Community Resources" description="Emergency contacts, city services, and helpful resources for Beaumont-Wilshire residents.">
+  
+  <!-- Page Header -->
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container">
+      <h1>Community Resources</h1>
+      <p>Helpful contacts and links for Beaumont-Wilshire residents</p>
+    </div>
+  </section>
+
+  <!-- Emergency Numbers -->
+  <section class="page-section">
+    <div class="container content-width">
+      <h2>🚨 Emergency Phone Numbers</h2>
+      <div class="card" style="background: #fef2f2; border-color: #fecaca;">
+        <ul style="list-style: none;">
+          <li style="padding: 0.75rem 0; border-bottom: 1px solid #fecaca; font-size: 1.125rem;">
+            <strong>Police, Fire, Medical:</strong> <a href="tel:911" style="color: #dc2626;">911</a>
+          </li>
+          <li style="padding: 0.75rem 0; border-bottom: 1px solid #fecaca;">
+            <strong>Suicide Crisis Line:</strong> <a href="tel:988">988</a>
+          </li>
+          <li style="padding: 0.75rem 0; border-bottom: 1px solid #fecaca;">
+            <strong>Mental Health Crisis Line:</strong> <a href="tel:503-988-4888">503-988-4888</a>
+          </li>
+          <li style="padding: 0.75rem 0; border-bottom: 1px solid #fecaca;">
+            <strong>Women's Crisis Line:</strong> <a href="tel:503-235-5333">503-235-5333</a>
+          </li>
+          <li style="padding: 0.75rem 0;">
+            <strong>Youthline (teen crisis support):</strong> <a href="tel:877-968-8491">877-968-8491</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- City Services - Immediate -->
+  <section class="page-section">
+    <div class="container content-width">
+      <h2>🏙️ City of Portland - Immediate Issues</h2>
+      <ul style="list-style: none;">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Downed Trees:</strong> <a href="tel:503-823-8733">503-823-8733</a>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Sewer Repair Emergencies:</strong> <a href="tel:503-823-1700">503-823-1700</a>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Water Main & Pipe Breaks:</strong> <a href="tel:503-823-4874">503-823-4874</a>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Environmental Spills/Pollution:</strong> <a href="tel:503-823-7180">503-823-7180</a>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Traffic Signals Not Working:</strong> <a href="tel:503-823-1700">503-823-1700</a>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Pothole & Road Hazards:</strong> <a href="tel:503-823-1700">503-823-1700</a>
+        </li>
+        <li style="padding: 0.75rem 0;">
+          <strong>Abandoned Vehicle:</strong> <a href="tel:503-823-7309">503-823-7309</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- City Services - Non-Immediate -->
+  <section class="page-section">
+    <div class="container content-width">
+      <h2>📞 Non-Emergency Contacts</h2>
+      <ul style="list-style: none;">
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>City of Portland General Info:</strong> <a href="tel:311">311</a>
+          <span style="color: var(--color-text-light); font-size: 0.875rem;"> — for all non-emergency questions, reports, and concerns</span>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Police Non-Emergency:</strong> <a href="tel:503-823-3333">503-823-3333</a>
+          <span style="color: var(--color-text-light); font-size: 0.875rem;"> — vandalism, theft, property damage, etc.</span>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Health, Utilities, Housing, Food Assistance:</strong> <a href="tel:211">211</a>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Aging & Disability Hotline:</strong> <a href="tel:503-988-3646">503-988-3646</a>
+        </li>
+        <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);">
+          <strong>Alcohol & Drug Resources:</strong> <a href="tel:800-923-4357">800-923-4357</a>
+        </li>
+        <li style="padding: 0.75rem 0;">
+          <strong>Bias Crime Hotline:</strong> <a href="tel:844-924-2427">844-924-2427</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Online Resources -->
+  <section class="page-section">
+    <div class="container content-width">
+      <h2>🔗 Helpful Websites</h2>
+      
+      <h3 style="font-size: 1rem; margin-top: 1.5rem;">City of Portland</h3>
+      <ul style="list-style: none;">
+        <li style="padding: 0.5rem 0;"><a href="https://www.portland.gov/help/contact-elected-official" target="_blank" rel="noopener">Contact Mayor or City Council</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.portland.gov/transportation" target="_blank" rel="noopener">Bureau of Transportation (PBOT)</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.portlandparks.gov" target="_blank" rel="noopener">Portland Parks & Recreation</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.portland.gov/civic" target="_blank" rel="noopener">Office of Community & Civic Life</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.portlandmaps.com" target="_blank" rel="noopener">Portland Maps</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.portland.gov/pbem/neighborhood-emergency-teams" target="_blank" rel="noopener">Neighborhood Emergency Team (NET) Program</a></li>
+      </ul>
+      
+      <h3 style="font-size: 1rem; margin-top: 1.5rem;">Other Government</h3>
+      <ul style="list-style: none;">
+        <li style="padding: 0.5rem 0;"><a href="https://trimet.org" target="_blank" rel="noopener">TriMet</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.oregonmetro.gov" target="_blank" rel="noopener">Metro</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://multco.us" target="_blank" rel="noopener">Multnomah County</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.oregonlegislature.gov/FindYourLegislator" target="_blank" rel="noopener">Find Your State Legislator</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener">Find Your U.S. Representative</a></li>
+      </ul>
+      
+      <h3 style="font-size: 1rem; margin-top: 1.5rem;">Local Organizations</h3>
+      <ul style="list-style: none;">
+        <li style="padding: 0.5rem 0;"><a href="https://www.beaumontvillagepdx.com" target="_blank" rel="noopener">Beaumont Business Association</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.friendsofwilshirepark.org" target="_blank" rel="noopener">Friends of Wilshire Park</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.storetodooroforegon.org" target="_blank" rel="noopener">Store to Door</a></li>
+        <li style="padding: 0.5rem 0;"><a href="https://www.communityfpa.org" target="_blank" rel="noopener">Community for Positive Aging</a></li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

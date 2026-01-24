@@ -1,0 +1,183 @@
+{
+  "url": "https://www.bwnapdx.org/",
+  "title": "Home | Beaumont-Wilshire Neighborhood Association",
+  "filename": "home-beaumont-wilshire-neighborhood-association",
+  "scraped_at": "2025-11-04T14:52:17.118203",
+  "meta": {
+    "description": "The NEW Beaumont-Wilshire Neighborhood Association website providing support and services for NE Portland neighborhood residents.",
+    "keywords": "Park, ·, Tourist, attraction",
+    "og_tags": {
+      "title": "Home | Beaumont-Wilshire Neighborhood Association",
+      "description": "The NEW Beaumont-Wilshire Neighborhood Association website providing support and services for NE Portland neighborhood residents.",
+      "url": "https://www.bwnapdx.org",
+      "site_name": "Beaumont-Wilshire NA",
+      "type": "website"
+    }
+  },
+  "navigation": [
+    {
+      "text": "Home",
+      "href": "https://www.bwnapdx.org/",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://www.bwnapdx.org/bylaws",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Policies",
+      "href": "https://www.bwnapdx.org/copy-of-bylaws",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "About Us",
+      "href": "https://www.bwnapdx.org/about-us",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Get Involved!",
+      "href": "https://www.bwnapdx.org/get-involved",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Contact",
+      "href": "https://www.bwnapdx.org/contact",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Community Resources",
+      "href": "https://www.bwnapdx.org/community-resources",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Newsletters",
+      "href": "https://www.bwnapdx.org/newsletters",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "About the Newsletter",
+      "href": "https://www.bwnapdx.org/newsletter-submissions",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Ad Rates",
+      "href": "https://www.bwnapdx.org/ad-rates",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Upcoming Events",
+      "href": "https://www.bwnapdx.org/upcoming-events",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Get Involved!",
+      "href": "https://www.bwnapdx.org/services-4",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Meeting Minutes",
+      "href": "https://www.bwnapdx.org/meeting-minutes",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Subscribe",
+      "href": "https://www.bwnapdx.org/subscribe",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Beaumont-Wilshire Neighborhood Association",
+      "href": "https://www.bwnapdx.org/",
+      "parent": "xU8fqS SITE_HEADER wixui-header"
+    },
+    {
+      "text": "About Us",
+      "href": "https://www.bwnapdx.org/about-us",
+      "parent": ""
+    }
+  ],
+  "content": {
+    "headings": [
+      {
+        "level": "h1",
+        "text": "Get To Know Us"
+      },
+      {
+        "level": "h2",
+        "text": "Be in the Know!"
+      }
+    ],
+    "paragraphs": [
+      "Nestled among the luscious trees of Northeast Portland, our community is known for its mix of urban and serene lifestyles. We’re a group of proud residents who strive to maintain a high standard of living through events and local services. Thanks to the Beaumont-Wilshire Neighborhood Association, residents have a community voice, advocate, and a place to volunteer.",
+      "To keep current on BWNA meetings and activities, as well as neighborhood events and other announcements, enter your info below to receive monthly email updates."
+    ],
+    "lists": [],
+    "text": "Home: Welcome\nGet To Know Us\nNestled among the luscious trees of Northeast Portland, our community is known for its mix of urban and serene lifestyles. We’re a group of proud residents who strive to maintain a high standard of living through events and local services. Thanks to the Beaumont-Wilshire Neighborhood Association, residents have a community voice, advocate, and a place to volunteer.\nAbout Us\nBe in the Know!\nTo keep current on BWNA meetings and activities, as well as neighborhood events and other announcements, enter your info below to receive monthly email updates."
+  },
+  "images": [
+    {
+      "src": "https://static.wixstatic.com/media/5167d7_ab2ff1e553c8439cb173eee01aba9e69~mv2_d_3000_1687_s_2.jpg/v1/fill/w_1920,h_1080,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/5167d7_ab2ff1e553c8439cb173eee01aba9e69~mv2_d_3000_1687_s_2.jpg",
+      "alt": "",
+      "title": ""
+    }
+  ],
+  "forms": [],
+  "links": [
+    {
+      "text": "",
+      "href": "https://www.bwnapdx.org/"
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://www.bwnapdx.org/bylaws"
+    },
+    {
+      "text": "Policies",
+      "href": "https://www.bwnapdx.org/copy-of-bylaws"
+    },
+    {
+      "text": "About Us",
+      "href": "https://www.bwnapdx.org/about-us"
+    },
+    {
+      "text": "Get Involved!",
+      "href": "https://www.bwnapdx.org/get-involved"
+    },
+    {
+      "text": "Contact",
+      "href": "https://www.bwnapdx.org/contact"
+    },
+    {
+      "text": "Community Resources",
+      "href": "https://www.bwnapdx.org/community-resources"
+    },
+    {
+      "text": "Newsletters",
+      "href": "https://www.bwnapdx.org/newsletters"
+    },
+    {
+      "text": "About the Newsletter",
+      "href": "https://www.bwnapdx.org/newsletter-submissions"
+    },
+    {
+      "text": "Ad Rates",
+      "href": "https://www.bwnapdx.org/ad-rates"
+    },
+    {
+      "text": "Upcoming Events",
+      "href": "https://www.bwnapdx.org/upcoming-events"
+    },
+    {
+      "text": "Get Involved!",
+      "href": "https://www.bwnapdx.org/services-4"
+    },
+    {
+      "text": "Meeting Minutes",
+      "href": "https://www.bwnapdx.org/meeting-minutes"
+    },
+    {
+      "text": "Subscribe",
+      "href": "https://www.bwnapdx.org/subscribe"
+    }
+  ]
+}

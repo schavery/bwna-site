@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Events data - in production, this comes from markdown files in src/content/events/
+const events = [
+  {
+    slug: "general-meeting-feb-2026",
+    title: "BWNA General Meeting",
+    date: new Date("2026-02-09"),
+    time: "7:00 PM - 8:30 PM",
+    location: "Sylvan Learning Center",
+    address: "4411 NE Fremont St",
+    type: "meeting",
+    description: "On the second Monday of even-numbered months, we hold a general meeting that is open to the public. All are welcome and encouraged to attend.",
+    recurring: true
+  },
+  {
+    slug: "recycling-feb-2026",
+    title: "Neighborhood Styrofoam & Electronics Recycling Event",
+    date: new Date("2026-02-21"),
+    time: "9:00 AM - 1:00 PM",
+    location: "Great Spirit Methodist Church",
+    address: "5535 NE Fremont St",
+    type: "community",
+    description: "Bring your clean styrofoam and old electronics for responsible recycling. This event helps keep these materials out of the landfill.",
+    recurring: false
+  },
+  {
+    slug: "board-meeting-mar-2026",
+    title: "BWNA Board Meeting",
+    date: new Date("2026-03-09"),
+    time: "7:00 PM - 8:30 PM",
+    location: "Sylvan Learning Center",
+    address: "4411 NE Fremont St",
+    type: "meeting",
+    description: "BWNA board meetings are held the 2nd Monday of January, March, May, July, September, and November. The public is welcome; time for public input is limited.",
+    recurring: true
+  },
+  {
+    slug: "general-meeting-apr-2026",
+    title: "BWNA General Meeting",
+    date: new Date("2026-04-13"),
+    time: "7:00 PM - 8:30 PM",
+    location: "Sylvan Learning Center",
+    address: "4411 NE Fremont St",
+    type: "meeting",
+    description: "Bimonthly general meeting open to all neighbors. Topics TBD.",
+    recurring: true
+  }
+];
+
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                'July', 'August', 'September', 'October', 'November', 'December'];
+const monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// Group events by month
+const eventsByMonth = events.reduce((acc, event) => {
+  const monthKey = `${event.date.getFullYear()}-${event.date.getMonth()}`;
+  if (!acc[monthKey]) {
+    acc[monthKey] = {
+      label: `${months[event.date.getMonth()]} ${event.date.getFullYear()}`,
+      events: []
+    };
+  }
+  acc[monthKey].events.push(event);
+  return acc;
+}, {} as Record<string, { label: string; events: typeof events }>);
+
+const typeColors: Record<string, string> = {
+  meeting: '#1e5c3a',
+  community: '#5c8a3e',
+  social: '#8b5c3e'
+};
+---
+
+<BaseLayout title="Upcoming Events" description="Find upcoming BWNA meetings, community events, and neighborhood activities in Beaumont-Wilshire.">
+  
+  <!-- Page Header -->
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container">
+      <h1>Upcoming Events</h1>
+      <p>Meetings, activities, and gatherings in Beaumont-Wilshire</p>
+    </div>
+  </section>
+
+  <!-- Events Filter (placeholder for future interactivity) -->
+  <section style="background: var(--color-background-alt); padding: 1rem 0; border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+        <span style="font-weight: 500;">Filter:</span>
+        <button class="btn" style="background: var(--color-primary); color: white; padding: 0.25rem 0.75rem; font-size: 0.875rem;">All Events</button>
+        <button class="btn" style="background: white; border: 1px solid var(--color-border); padding: 0.25rem 0.75rem; font-size: 0.875rem;">Meetings</button>
+        <button class="btn" style="background: white; border: 1px solid var(--color-border); padding: 0.25rem 0.75rem; font-size: 0.875rem;">Community</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events List -->
+  <section class="page-section">
+    <div class="container content-width">
+      
+      {Object.entries(eventsByMonth).map(([key, { label, events: monthEvents }]) => (
+        <div style="margin-bottom: 2.5rem;">
+          <h2 style="font-size: 1.25rem; color: var(--color-text-light); border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem; margin-bottom: 1rem;">
+            {label}
+          </h2>
+          
+          {monthEvents.map((event) => (
+            <div class="event-item" style="background: white; border: 1px solid var(--color-border);">
+              <div class="event-date">
+                <div class="month">{monthsShort[event.date.getMonth()]}</div>
+                <div class="day">{event.date.getDate()}</div>
+              </div>
+              <div class="event-details" style="flex: 1;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+                  <h3 style="margin-bottom: 0.25rem;">{event.title}</h3>
+                  <span style={`background: ${typeColors[event.type] || '#666'}; color: white; padding: 0.125rem 0.5rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase;`}>
+                    {event.type}
+                  </span>
+                </div>
+                <div class="event-meta">
+                  🕐 {event.time} &nbsp;|&nbsp; 📍 {event.location}
+                </div>
+                <p style="margin-bottom: 0.5rem;">{event.description}</p>
+                {event.address && (
+                  <a href={`https://maps.google.com/?q=${encodeURIComponent(event.address + ', Portland, OR')}`} 
+                     target="_blank" 
+                     rel="noopener"
+                     style="font-size: 0.875rem;">
+                    View on Map →
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      ))}
+      
+    </div>
+  </section>
+
+  <!-- Meeting Schedule Info -->
+  <section class="page-section">
+    <div class="container content-width">
+      <div class="card" style="background: var(--color-primary-light);">
+        <h3>Regular Meeting Schedule</h3>
+        <p><strong>General Meetings:</strong> 2nd Monday of even-numbered months (Feb, Apr, Jun, Aug, Oct, Dec)</p>
+        <p><strong>Board Meetings:</strong> 2nd Monday of odd-numbered months (Jan, Mar, May, Jul, Sep, Nov)</p>
+        <p style="margin-bottom: 0;"><strong>Location:</strong> Sylvan Learning Center, 4411 NE Fremont St (unless otherwise noted)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Event CTA -->
+  <section class="page-section" style="text-align: center;">
+    <div class="container">
+      <h3>Have a neighborhood event to share?</h3>
+      <p style="color: var(--color-text-light);">
+        Contact us to have your community event listed on our calendar.
+      </p>
+      <a href="mailto:editor@bwnapdx.org" class="btn btn-secondary">Submit an Event</a>
+    </div>
+  </section>
+</BaseLayout>

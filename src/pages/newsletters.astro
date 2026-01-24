@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Newsletter archive - these PDF links come from the existing Wix site
+// In production, you could also have web-native versions as markdown
+const newsletters = [
+  { date: "Jan - Feb 2026", url: "https://www.bwnapdx.org/_files/ugd/5167d7_e5103ae941d147e48390a51c2b05c200.pdf", featured: true },
+  { date: "Nov - Dec 2025", url: "https://www.bwnapdx.org/_files/ugd/5167d7_b93e1e7e75034b6082eea848f74fe31c.pdf" },
+  { date: "Sept - Oct 2025", url: "https://www.bwnapdx.org/_files/ugd/5167d7_41c08a6cebb34e5c9bc4d60f01b99bb5.pdf" },
+  { date: "Jul - Aug 2025", url: "https://www.bwnapdx.org/_files/ugd/5167d7_375b67b9d21d414abe1ad989da05fe48.pdf" },
+  { date: "May - Jun 2025", url: "https://www.bwnapdx.org/_files/ugd/5167d7_e6115c33237b46aa99635a71bf1f410d.pdf" },
+  { date: "Mar - Apr 2025", url: "https://www.bwnapdx.org/_files/ugd/5167d7_9dfb71f57e074e85b72e98b2df2b9743.pdf" },
+  { date: "Jan - Feb 2025", url: "https://www.bwnapdx.org/_files/ugd/5167d7_641e43825a464b068be809b9e08f8a0f.pdf" },
+  { date: "Nov - Dec 2024", url: "https://www.bwnapdx.org/_files/ugd/5167d7_8db7719c1cc94eaab05e41a4509d39fe.pdf" },
+  { date: "Sep - Oct 2024", url: "https://www.bwnapdx.org/_files/ugd/5167d7_b865ecece9224a93b7007b36cd97c897.pdf" },
+  { date: "Jul - Aug 2024", url: "https://www.bwnapdx.org/_files/ugd/5167d7_f354e05678bc44c3911992bca313f846.pdf" },
+  { date: "May - Jun 2024", url: "https://www.bwnapdx.org/_files/ugd/5167d7_fdbcec19402e4cb2b2d648a95f8991e7.pdf" },
+  { date: "Mar - Apr 2024", url: "https://www.bwnapdx.org/_files/ugd/5167d7_bb692e5f17c242888071b7c19cf44ba2.pdf" },
+  { date: "Jan - Feb 2024", url: "https://www.bwnapdx.org/_files/ugd/5167d7_0a4bcb805585492bb4bb15ea63b3ecf8.pdf" },
+  { date: "Nov - Dec 2023", url: "https://www.bwnapdx.org/_files/ugd/5167d7_dd4cf500240d47d99ef49b13eebd91a1.pdf" },
+  { date: "Sep - Oct 2023", url: "https://www.bwnapdx.org/_files/ugd/5167d7_f8909bba878745558f3d6a8e8aa2739b.pdf" },
+  { date: "Jul - Aug 2023", url: "https://www.bwnapdx.org/_files/ugd/5167d7_482f45d2a2984b04a3c5808bc767b105.pdf" },
+];
+
+// Group by year
+const newslettersByYear = newsletters.reduce((acc, nl) => {
+  const year = nl.date.split(' ').pop()!;
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(nl);
+  return acc;
+}, {} as Record<string, typeof newsletters>);
+---
+
+<BaseLayout title="Newsletters" description="Read the BWNA newsletter for neighborhood news, events, and community updates. Archive dating back to 2012.">
+  
+  <!-- Page Header -->
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container">
+      <h1>Newsletter</h1>
+      <p>Your source for Beaumont-Wilshire news and updates</p>
+    </div>
+  </section>
+
+  <!-- About the Newsletter -->
+  <section class="page-section">
+    <div class="container content-width">
+      <p>
+        BWNA produces a free bimonthly newsletter that is distributed to the doorsteps of 
+        over 2,600 neighborhood residences and businesses by volunteers. Advertisements by 
+        local merchants and organizations support the newsletter, which invites letters, 
+        editorials, articles, and announcements from neighbors.
+      </p>
+      
+      <div class="card" style="background: var(--color-primary-light); margin: 1.5rem 0;">
+        <h3 style="display: flex; align-items: center; gap: 0.5rem;">
+          📰 Latest Issue: {newsletters[0].date}
+        </h3>
+        <p>The newest edition of the BWNA newsletter is now available!</p>
+        <a href={newsletters[0].url} target="_blank" rel="noopener" class="btn btn-secondary">
+          Download PDF →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Archive -->
+  <section class="page-section">
+    <div class="container content-width">
+      <h2>Newsletter Archive</h2>
+      
+      {Object.entries(newslettersByYear).map(([year, items]) => (
+        <div style="margin-bottom: 2rem;">
+          <h3 style="font-size: 1.125rem; color: var(--color-text-light); margin-bottom: 0.75rem;">{year}</h3>
+          <ul class="newsletter-list">
+            {items.map((nl) => (
+              <li>
+                <span>{nl.date}</span>
+                <a href={nl.url} target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span>Download PDF</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      
+      <p style="text-align: center; color: var(--color-text-light); margin-top: 2rem;">
+        <a href="/newsletter-archive">View complete archive (2012-present) →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Contribute -->
+  <section class="page-section">
+    <div class="container content-width">
+      <div class="grid grid-2" style="gap: 2rem;">
+        <div class="card">
+          <h3>📝 Contribute Content</h3>
+          <p>
+            Have a story, event, or announcement for the newsletter? We welcome 
+            contributions from neighbors!
+          </p>
+          <a href="mailto:editor@bwnapdx.org">Contact the Editor</a>
+        </div>
+        
+        <div class="card">
+          <h3>📢 Advertise</h3>
+          <p>
+            Support the newsletter and reach 2,600+ local households with your 
+            business or organization.
+          </p>
+          <a href="/ad-rates">View Ad Rates</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Subscribe -->
+  <section class="page-section" style="background: var(--color-primary); color: white; text-align: center;">
+    <div class="container">
+      <h2 style="color: white;">Get Updates by Email</h2>
+      <p style="max-width: 500px; margin: 0 auto 1.5rem; opacity: 0.95;">
+        Can't wait for the printed newsletter? Subscribe to our email list for 
+        monthly updates about meetings, events, and neighborhood news.
+      </p>
+      <a href="/subscribe" class="btn btn-primary">Subscribe Now</a>
+    </div>
+  </section>
+</BaseLayout>

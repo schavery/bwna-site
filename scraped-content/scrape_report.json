@@ -1,0 +1,175 @@
+{
+  "scraped_at": "2025-11-04T14:56:20.605737",
+  "site_url": "https://www.bwnapdx.org",
+  "total_pages": 12,
+  "total_media": 25,
+  "pages": [
+    {
+      "title": "Home | Beaumont-Wilshire Neighborhood Association",
+      "url": "https://www.bwnapdx.org",
+      "filename": "home-beaumont-wilshire-neighborhood-association",
+      "image_count": 1,
+      "form_count": 0
+    },
+    {
+      "title": "Bylaws | Beaumont-Wilshire Neighborhood Association",
+      "url": "https://www.bwnapdx.org/bylaws",
+      "filename": "bylaws-beaumont-wilshire-neighborhood-association",
+      "image_count": 1,
+      "form_count": 1
+    },
+    {
+      "title": "Newsletters | Beaumont-Wilshire Neighborhood Association",
+      "url": "https://www.bwnapdx.org/newsletters",
+      "filename": "newsletters-beaumont-wilshire-neighborhood-associa",
+      "image_count": 0,
+      "form_count": 0
+    },
+    {
+      "title": "About Us | Beaumont-Wilshire Neighborhood Association",
+      "url": "https://www.bwnapdx.org/about-us",
+      "filename": "about-us-beaumont-wilshire-neighborhood-associatio",
+      "image_count": 16,
+      "form_count": 0
+    },
+    {
+      "title": "Get Involved! | Beaumont-Wilshire NA",
+      "url": "https://www.bwnapdx.org/get-involved",
+      "filename": "get-involved-beaumont-wilshire-na",
+      "image_count": 6,
+      "form_count": 0
+    },
+    {
+      "title": "Subscribe | Beaumont-Wilshire NA",
+      "url": "https://www.bwnapdx.org/subscribe",
+      "filename": "subscribe-beaumont-wilshire-na",
+      "image_count": 0,
+      "form_count": 0
+    },
+    {
+      "title": "Community Resources | Beaumont-Wilshire Neighborhood Association",
+      "url": "https://www.bwnapdx.org/community-resources",
+      "filename": "community-resources-beaumont-wilshire-neighborhood",
+      "image_count": 1,
+      "form_count": 0
+    },
+    {
+      "title": "Home | Beaumont-Wilshire Neighborhood Association",
+      "url": "https://www.bwnapdx.org/",
+      "filename": "home-beaumont-wilshire-neighborhood-association",
+      "image_count": 1,
+      "form_count": 0
+    },
+    {
+      "title": "Get Involved! | Beaumont-Wilshire NA",
+      "url": "https://www.bwnapdx.org/services-4",
+      "filename": "get-involved-beaumont-wilshire-na",
+      "image_count": 6,
+      "form_count": 0
+    },
+    {
+      "title": "Meeting Minutes | Beaumont-Wilshire NA",
+      "url": "https://www.bwnapdx.org/meeting-minutes",
+      "filename": "meeting-minutes-beaumont-wilshire-na",
+      "image_count": 0,
+      "form_count": 0
+    },
+    {
+      "title": "Ad Rates | Beaumont-Wilshire NA",
+      "url": "https://www.bwnapdx.org/ad-rates",
+      "filename": "ad-rates-beaumont-wilshire-na",
+      "image_count": 0,
+      "form_count": 0
+    },
+    {
+      "title": "Bylaws | Beaumont-Wilshire Neighborhood Association",
+      "url": "https://www.bwnapdx.org/copy-of-bylaws",
+      "filename": "bylaws-beaumont-wilshire-neighborhood-association",
+      "image_count": 1,
+      "form_count": 1
+    }
+  ],
+  "navigation_structure": [
+    {
+      "text": "Home",
+      "href": "https://www.bwnapdx.org/",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Bylaws",
+      "href": "https://www.bwnapdx.org/bylaws",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Policies",
+      "href": "https://www.bwnapdx.org/copy-of-bylaws",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "About Us",
+      "href": "https://www.bwnapdx.org/about-us",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Get Involved!",
+      "href": "https://www.bwnapdx.org/get-involved",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Contact",
+      "href": "https://www.bwnapdx.org/contact",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Community Resources",
+      "href": "https://www.bwnapdx.org/community-resources",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Newsletters",
+      "href": "https://www.bwnapdx.org/newsletters",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "About the Newsletter",
+      "href": "https://www.bwnapdx.org/newsletter-submissions",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Ad Rates",
+      "href": "https://www.bwnapdx.org/ad-rates",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Upcoming Events",
+      "href": "https://www.bwnapdx.org/upcoming-events",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Get Involved!",
+      "href": "https://www.bwnapdx.org/services-4",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Meeting Minutes",
+      "href": "https://www.bwnapdx.org/meeting-minutes",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Subscribe",
+      "href": "https://www.bwnapdx.org/subscribe",
+      "parent": "R_TAzU"
+    },
+    {
+      "text": "Beaumont-Wilshire Neighborhood Association",
+      "href": "https://www.bwnapdx.org/",
+      "parent": "xU8fqS SITE_HEADER wixui-header"
+    },
+    {
+      "text": "About Us",
+      "href": "https://www.bwnapdx.org/about-us",
+      "parent": ""
+    }
+  ],
+  "mailchimp_forms": []
+}
