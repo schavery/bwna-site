@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 // In a full implementation, these would come from content collections
 const upcomingEvents = [
   {
@@ -24,17 +26,17 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 
 <BaseLayout title="Home">
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" style={`background: linear-gradient(rgba(30,92,58,0.8), rgba(92,138,62,0.85)), url('${base}images/hero-neighborhood.jpg') center/cover no-repeat;`}>
     <div class="container">
       <h1>Beaumont-Wilshire Neighborhood Association</h1>
       <p>
-        Nestled among the luscious trees of Northeast Portland, our community is known 
-        for its mix of urban and serene lifestyles. We're a group of proud residents 
+        Nestled among the luscious trees of Northeast Portland, our community is known
+        for its mix of urban and serene lifestyles. We're a group of proud residents
         who strive to maintain a high standard of living through events and local services.
       </p>
       <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/about" class="btn btn-primary">Learn About Us</a>
-        <a href="/get-involved" class="btn" style="background: transparent; border: 2px solid white; color: white;">Get Involved</a>
+        <a href={`${base}about`} class="btn btn-primary">Learn About Us</a>
+        <a href={`${base}get-involved`} class="btn" style="background: transparent; border: 2px solid white; color: white;">Get Involved</a>
       </div>
     </div>
   </section>
@@ -46,7 +48,7 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
         <h2>Upcoming Events</h2>
         <p>Join us at our next community gathering</p>
       </div>
-      
+
       <div class="content-width" style="margin: 0 auto;">
         {upcomingEvents.map((event) => (
           <div class="event-item">
@@ -64,9 +66,9 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
           </div>
         ))}
       </div>
-      
+
       <div style="text-align: center; margin-top: 1.5rem;">
-        <a href="/events" class="btn btn-secondary">View All Events</a>
+        <a href={`${base}events`} class="btn btn-secondary">View All Events</a>
       </div>
     </div>
   </section>
@@ -77,24 +79,24 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
       <div class="section-header">
         <h2>How Can We Help?</h2>
       </div>
-      
+
       <div class="grid grid-3">
         <div class="card">
-          <h3>📰 Latest Newsletter</h3>
+          <h3>Latest Newsletter</h3>
           <p>Read the Jan-Feb 2026 issue for the latest neighborhood news, events, and community updates.</p>
-          <a href="/newsletters">Read Newsletter →</a>
+          <a href={`${base}newsletters`}>Read Newsletter &rarr;</a>
         </div>
-        
+
         <div class="card">
-          <h3>🙋 Volunteer With Us</h3>
+          <h3>Volunteer With Us</h3>
           <p>From event planning to newsletter delivery, there are many ways to contribute to our community.</p>
-          <a href="/get-involved">Find Opportunities →</a>
+          <a href={`${base}get-involved`}>Find Opportunities &rarr;</a>
         </div>
-        
+
         <div class="card">
-          <h3>📞 Community Resources</h3>
+          <h3>Community Resources</h3>
           <p>Emergency contacts, city services, and helpful links for Beaumont-Wilshire residents.</p>
-          <a href="/resources">View Resources →</a>
+          <a href={`${base}resources`}>View Resources &rarr;</a>
         </div>
       </div>
     </div>
@@ -107,26 +109,22 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
         <div>
           <h2>About Our Neighborhood</h2>
           <p>
-            The Beaumont-Wilshire Neighborhood Association (BWNA) is one of 95 officially 
-            recognized neighborhood associations in Portland's historic tradition of local 
+            The Beaumont-Wilshire Neighborhood Association (BWNA) is one of 95 officially
+            recognized neighborhood associations in Portland's historic tradition of local
             volunteer activism and involvement.
           </p>
           <p>
-            Our boundary includes much of the Fremont and NE 42nd Avenue business districts, 
+            Our boundary includes much of the Fremont and NE 42nd Avenue business districts,
             Beaumont Middle School, and beautiful Wilshire Park.
           </p>
           <p>
-            <strong>Membership is free</strong> and open to all residents, property owners, 
+            <strong>Membership is free</strong> and open to all residents, property owners,
             businesses, and nonprofits in the neighborhood.
           </p>
-          <a href="/about" class="btn btn-secondary">Meet Our Board</a>
+          <a href={`${base}about`} class="btn btn-secondary">Meet Our Board</a>
         </div>
-        <div style="background: var(--color-primary-light); border-radius: 8px; padding: 2rem; text-align: center;">
-          <!-- Placeholder for neighborhood map -->
-          <p style="color: var(--color-primary); font-style: italic;">
-            [Neighborhood Map]<br>
-            Beaumont-Wilshire boundaries
-          </p>
+        <div>
+          <img src={`${base}images/bwna-map.jpg`} alt="Beaumont-Wilshire neighborhood boundary map" style="width: 100%; border-radius: 8px; border: 1px solid var(--color-border);">
         </div>
       </div>
     </div>
@@ -137,10 +135,10 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
     <div class="container">
       <h2 style="color: white;">Stay in the Know!</h2>
       <p style="max-width: 500px; margin: 0 auto 1.5rem; opacity: 0.95;">
-        Subscribe to receive monthly email updates about BWNA meetings, activities, 
+        Subscribe to receive monthly email updates about BWNA meetings, activities,
         and neighborhood announcements.
       </p>
-      <a href="/subscribe" class="btn btn-primary">Subscribe to Updates</a>
+      <a href={`${base}subscribe`} class="btn btn-primary">Subscribe to Updates</a>
     </div>
   </section>
 </BaseLayout>

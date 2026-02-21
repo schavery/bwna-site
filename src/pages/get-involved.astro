@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const base = import.meta.env.BASE_URL;
+
 const opportunities = [
   {
     title: "Upcoming Events",
@@ -48,7 +50,7 @@ const opportunities = [
 ---
 
 <BaseLayout title="Get Involved" description="Volunteer opportunities with the Beaumont-Wilshire Neighborhood Association. Find ways to contribute to your community.">
-  
+
   <!-- Page Header -->
   <section class="hero" style="padding: 2rem 0;">
     <div class="container">
@@ -61,12 +63,12 @@ const opportunities = [
   <section class="page-section">
     <div class="container content-width">
       <p style="font-size: 1.125rem;">
-        While the Beaumont-Wilshire Neighborhood Association is officially guided by a volunteer 
-        board of directors, the strength of our community lies in the many residents who step 
+        While the Beaumont-Wilshire Neighborhood Association is officially guided by a volunteer
+        board of directors, the strength of our community lies in the many residents who step
         up to provide valuable input, lend their time, and support neighborhood initiatives.
       </p>
       <p>
-        From event planning to advocacy and cleanup efforts, our work is powered by neighbors 
+        From event planning to advocacy and cleanup efforts, our work is powered by neighbors
         who care deeply about making this a vibrant, welcoming place to live.
       </p>
     </div>
@@ -79,7 +81,7 @@ const opportunities = [
         <h2>Volunteer Opportunities</h2>
         <p>Find a way to contribute that fits your schedule and interests</p>
       </div>
-      
+
       <div class="grid grid-2">
         {opportunities.map((opp) => (
           <div class="card">
@@ -97,7 +99,7 @@ const opportunities = [
               </a>
             ) : opp.link ? (
               <a href={opp.link} target="_blank" rel="noopener" class="btn btn-secondary" style="margin-top: 0.5rem;">
-                Learn More →
+                Learn More &rarr;
               </a>
             ) : null}
           </div>
@@ -110,16 +112,16 @@ const opportunities = [
   <section class="page-section">
     <div class="container content-width">
       <div class="card" style="background: var(--color-primary-light); text-align: center;">
-        <h3>🏛️ Attend a BWNA Meeting</h3>
+        <h3>Attend a BWNA Meeting</h3>
         <p>
-          The easiest way to get involved is to attend one of our meetings! Listen, share 
+          The easiest way to get involved is to attend one of our meetings! Listen, share
           concerns, vote on issues, meet neighbors, and stay updated on community plans.
         </p>
         <p style="margin-bottom: 1rem;">
           <strong>General Meetings:</strong> 2nd Monday of even months, 7 PM<br>
           <strong>Board Meetings:</strong> 2nd Monday of odd months, 7 PM
         </p>
-        <a href="/events" class="btn btn-secondary">See Meeting Schedule</a>
+        <a href={`${base}events`} class="btn btn-secondary">See Meeting Schedule</a>
       </div>
     </div>
   </section>
@@ -129,7 +131,7 @@ const opportunities = [
     <div class="container">
       <h2>Open to Anything?</h2>
       <p style="max-width: 500px; margin: 0 auto 1.5rem; color: var(--color-text-light);">
-        Not sure where to start? Let us know you're interested and we'll match you with 
+        Not sure where to start? Let us know you're interested and we'll match you with
         opportunities as they come up.
       </p>
       <a href="mailto:president@bwnapdx.org?subject=Volunteer Interest" class="btn btn-secondary">
@@ -142,13 +144,13 @@ const opportunities = [
   <section class="page-section">
     <div class="container content-width">
       <div class="card" style="border: 2px solid var(--color-accent);">
-        <h3>🎨 Special Opportunity: Art & Garden Tour Host</h3>
+        <h3>Special Opportunity: Art &amp; Garden Tour Host</h3>
         <p>
-          Share your garden or art collection with neighbors during our annual Art & Garden Tour! 
+          Share your garden or art collection with neighbors during our annual Art & Garden Tour!
           Hosts welcome visitors to their property for a few hours during this beloved community event.
         </p>
         <a href="mailto:events@bwnapdx.org?subject=Art Garden Tour Host Interest">
-          Learn about hosting →
+          Learn about hosting &rarr;
         </a>
       </div>
     </div>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title="Subscribe" description="Subscribe to BWNA email updates.">
+  <section class="hero" style="padding: 2rem 0;">
+    <div class="container">
+      <h1>Subscribe to BWNA Updates</h1>
+      <p>Stay informed about neighborhood news and events</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container content-width">
+      <p>
+        Subscribe to our email list to receive monthly updates about BWNA meetings,
+        community events, volunteer opportunities, and neighborhood announcements.
+      </p>
+      <p>
+        To sign up, send an email to
+        <a href="mailto:president@bwnapdx.org?subject=Subscribe to BWNA Updates">president@bwnapdx.org</a>
+        with "Subscribe" in the subject line, and we'll add you to our mailing list.
+      </p>
+
+      <div class="card" style="background: var(--color-primary-light); margin-top: 2rem;">
+        <h3>Printed Newsletter</h3>
+        <p>
+          BWNA also distributes a free bimonthly printed newsletter to over 2,600
+          neighborhood households. <a href={`${base}newsletters`}>View the newsletter archive</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
