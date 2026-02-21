@@ -12,9 +12,31 @@ The official website for the Beaumont-Wilshire Neighborhood Association, built w
 2. A text editor (even Notepad works, or use GitHub's web editor)
 3. 10 minutes to learn the basics
 
-### The Simple Truth
+### How to Update the Site
 
-This website is just a folder of text files. When you save a change, the website automatically rebuilds and publishes itself. That's it.
+```bash
+# 1. Clone the repo (first time only)
+git clone https://github.com/schavery/bwna-site.git
+cd bwna-site
+
+# 2. Install dependencies (first time, or after pulling new changes)
+npm install
+
+# 3. Start the local dev server to preview your changes
+npm run dev
+# Opens at http://localhost:4321
+
+# 4. Edit content in src/content/ (see Common Tasks below)
+
+# 5. When you're happy, commit and push
+git add .
+git commit -m "Describe your change"
+git push
+```
+
+Pushing to `main` triggers an automatic build and deploy — no extra steps needed.
+
+You can also skip local setup entirely and edit files directly on GitHub. Changes to `main` will auto-deploy either way.
 
 ---
 
@@ -117,34 +139,14 @@ The AI can read all the code and understand exactly how the site works because i
 
 ## 💻 For Developers
 
-### Local Development
-
 ```bash
-# Install dependencies
-npm install
-
-# Start dev server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+npm install          # Install dependencies
+npm run dev          # Dev server at localhost:4321
+npm run build        # Production build → dist/
+npm run preview      # Preview the production build
 ```
 
-### Deployment
-
-The site is configured for deployment on [Netlify](https://netlify.com) / [Cloudflare Pages](https://pages.cloudflare.com) / [GitHub Pages](https://pages.github.com).
-
-Push to `main` branch → automatic deployment.
-
-### Content Collections (Future Enhancement)
-
-For type-safe content, configure Astro content collections in `src/content/config.ts`. This enables:
-- Validation of frontmatter fields
-- Auto-generated types
-- Better error messages for content editors
+Push to `main` → automatic deployment.
 
 ---
 
