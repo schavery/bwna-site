@@ -149,7 +149,7 @@ a:hover {
 }
 
 /* Navigation */
-.main-nav ul {
+.main-nav > ul {
   display: flex;
   list-style: none;
   gap: var(--spacing-lg);
@@ -477,7 +477,7 @@ a:hover {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
-  .main-nav ul {
+  .main-nav > ul {
     flex-direction: column;
     gap: 0;
     padding: var(--spacing-sm) 0;
